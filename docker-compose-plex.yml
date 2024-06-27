@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    hostname: zdrive
+    network_mode: host
+    privileged: true
+    environment:
+      - PUID=1000
+      - PGID=100
+      - UMASK=022
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - /srv/dev-disk-by-uuid-A0C6D047C6D01EFA/plex/config:/config
+      - /srv/dev-disk-by-uuid-A0C6D047C6D01EFA/plex/transcoder:/transcoder
+      - /srv/dev-disk-by-uuid-A0C6D047C6D01EFA/plex/tv:/tv
+      - /srv/dev-disk-by-uuid-A0C6D047C6D01EFA/plex/movies:/movies
+      - /srv/dev-disk-by-uuid-0F17131E0F17131E/plex/tv:/tv-ex
+      - /srv/dev-disk-by-uuid-0F17131E0F17131E/plex/movies:/movies-ex
+      - /srv/dev-disk-by-uuid-3CF0E955F0E915C4/plex/tv:/tv-2
+      - /srv/dev-disk-by-uuid-3CF0E955F0E915C4/plex/movies:/movies-2
+      - /srv/dev-disk-by-uuid-481CD6BB1CD6A36C/plex/tv:/tv-3
+      - /srv/dev-disk-by-uuid-481CD6BB1CD6A36C/plex/movies:/movies-3
+      - /srv/dev-disk-by-uuid-F66A2CD16A2C9103/plex/tv:/tv-4
+      - /srv/dev-disk-by-uuid-F66A2CD16A2C9103/plex/movies:/movies-4
+    restart: unless-stopped

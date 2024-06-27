@@ -1,0 +1,19 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "This is repository that I put the utility functions I developed for several projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztancankiri/utilities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ztancankiri/utilities/issues"
+  },
+  "homepage": "https://github.com/ztancankiri/utilities#readme",
+  "dependencies": {
+    "xml-stream": "^0.4.5",
+    "xml2js-es6-promise": "^1.1.1"
+  }
+}
